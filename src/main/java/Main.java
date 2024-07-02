@@ -10,12 +10,13 @@ public class Main {
         for (int i = 1; i <= 3; i++) {
             int speedCar;
             System.out.println("Введите название машины №" + i + ":");
-            String nameCar = scanner.next();
+            String nameCar = scanner.nextLine();
 
             while (true) {
                 System.out.println("Введите скорость машины №" + i + " в диапозоне от 1 до 250 км/ч:");
                 try {
                     speedCar = scanner.nextInt();
+                    scanner.nextLine();
                     if (speedCar > 250 || speedCar <= 0) {
                         System.out.println("Недопустимое значение скорости.");
                     } else {
