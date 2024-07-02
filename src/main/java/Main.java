@@ -14,17 +14,22 @@ public class Main {
 
             while (true) {
                 System.out.println("Введите скорость машины №" + i + " в диапозоне от 1 до 250 км/ч:");
-                int speed = scanner.nextInt();
-                if (speed > 250 || speed <= 0) {
-                    System.out.println("Недопустимое значение скорости.");
-                } else {
-                    speedCar = speed;
-                    break;
+                try {
+                    speedCar = scanner.nextInt();
+                    if (speedCar > 250 || speedCar <= 0) {
+                        System.out.println("Недопустимое значение скорости.");
+                    } else {
+                        break;
+                    }
+                } catch (Exception e){
+                    System.out.println("Введенные данные не являются числом.");
+                    scanner.nextLine();
+
                 }
             }
             carList.add(new Car(nameCar, speedCar));
         }
         scanner.close();
-        System.out.println("Самая быстрая машина: " + Race.winner(carList));
+        System.out.println("Самая быстрая машина: " + Race.calculateWinner(carList));
     }
 }

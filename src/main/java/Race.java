@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Race {
 
-    public static String winner(ArrayList<Car> carSet) {
+    public static String calculateWinner(ArrayList<Car> carSet) {
         int distanceOfWinner = 0;
         String nameOfWinner = "";
         for (Car element : carSet) {
